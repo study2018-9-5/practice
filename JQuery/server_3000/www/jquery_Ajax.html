@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQ_Ajax</title>
+	<link rel="stylesheet" href="./css/jquery_Ajax.css">
+	<script src="./js/jquery.js"></script>
+</head>
+<body>
+	<div id="box">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>名称</th>
+					<th>价格</th>
+					<th>数量</th>
+				</tr>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
+	</div>
+
+	<script>
+		$(function(){
+	        $.ajax({
+	            type: "GET",
+	            url: "./data/demo.json",
+	            data: {},
+	            dataType: "json",
+	            timeout: 500,
+	            async: true, //所有请求均为异步请求。如果需要发送同步请求，请将此选项设置为false。当async设置为false，同步的时候，timeout是不生效的。
+	            cache: false, //默认为true（当dataType为script时，默认为false）。设置为false将不会从浏览器缓存中加载请求信息。
+	            success: function(res){
+                    var html = ''; 
+                    $('tbody').empty();
+                    $.each(res, function(index, value){
+						// console.log(index);
+						// console.log(value);
+                        html = `<tr>
+									<td>${value.order_number}</td>
+									<td>${value.name}</td>
+									<td>${value.price}</td>
+									<td>${value.number}</td>
+								</tr>`;
+						$('tbody').append(html);
+                    });     
+	            },
+	            complete: function(XMLHttpRequest,status){ //请求完成后最终执行参数
+            　　　　if(status=='timeout'){ //超时,status还有success,error等值的情况       
+            　　　　　  alert("超时");
+            　　　　}
+	            }
+	        });
+		});
+	</script>
+</body>
+</html>

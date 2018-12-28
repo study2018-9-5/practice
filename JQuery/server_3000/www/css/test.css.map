@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAGA,IAAK;EACH,KAAK,ECJK,KAAK;EDKf,MAAM,EAAE,KAAK;;AACb,UAAQ;EACN,MAAM,EAAE,IAAI;EACZ,WAAW,EAAE,IAAI;;;AAYrB,MAAO;EACL,gBAAgB,EAAE,KAAK;EACvB,MAAM,EAAE,iBAAiB;EAPzB,kBAAkB,EAAE,GAAG;EACvB,qBAAqB,EAAE,GAAG;EAC1B,aAAa,EAAE,GAAG;;;AASpB,0BAA0B",
+"sources": ["../sass/test.scss","../sass/_test1.scss"],
+"names": [],
+"file": "test.css"
+}

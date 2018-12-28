@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<iframe name="" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"  width="100%" height="259" src="list.html"></iframe>
+		<script src="./jquery-3.3.1.min.js"></script>
+	<style>
+		body {
+		      margin: 0;
+		      padding: 0;
+		}
+		#all{
+			width:100%;
+			height:100%;
+			margin:0 auto;
+		}
+		#all .no{
+			width:100%;
+			height:100px;
+		}
+		#all .no div{
+			float: left;
+			text-align: center;
+			line-height: 100px;
+			width:20%;
+		}
+		#all .no .pai img{
+			margin:0 auto;
+			display:block;
+			width:100px;
+			height:100px;
+		}
+		.acator{
+			width: 100%;
+			height: 100%;
+		}
+		.acator img{
+			width:50px;
+			height:50px;
+			margin-top: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div id="all">
+		<!-- <div class="no">
+			<div class="pai">
+				<div><img src="../images/jinpai.png" alt=""></div>
+			</div>
+			<div class="acator">
+				<div><img class="main" src="../images/navigatorTop.png" alt=""></div>
+			</div>
+			<div class="username">1</div>
+			<div class="se_name">2</div>
+			<div class="score">3</div>
+		</div> -->
+	</div>
+	
+
+	<script>
+	
+	function aaa(){
+		$.ajax({
+	        type: "POST",
+	        url: "http://wechat.l0yar.cn/show/pkRanking",
+	        data: {},
+	        dataType: "json",
+	        async: true,
+	        success: function(res) {
+				for (var i = 0; i<=res.length; i++) {
+					console.log(res[i]);
+					var aa = `<div class="no">
+								<div class="pai">
+									<div><img src="../images/jinpai.png" alt=""></div>
+								</div>
+								<div class="acator">
+									<div><img class="main" src="../images/navigatorTop.png" alt=""></div>
+								</div>
+								<div class="username">${res[i].users.username}</div>
+								<div class="username">${res[i].users.sename}</div>
+								<div class="username">${res[i].fraction}</div>
+							  </div>`;
+					$('#all').append(aa);
+					
+				}
+	        }
+	     });
+	}
+
+	aaa();
+	
+	</script>
+</body>
+</html>

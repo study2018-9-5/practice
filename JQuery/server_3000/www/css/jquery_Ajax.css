@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#box {
+  width: 400px;
+  max-height: 150px;
+  margin: 20px auto;
+}
+#box .table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+}
+#box .table tr {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+#box .table tr th, #box .table tr td {
+  width: 150px;
+  height: 30px;
+  border: 1px solid #ccc;
+}
+
+/*# sourceMappingURL=jquery_Ajax.css.map */
